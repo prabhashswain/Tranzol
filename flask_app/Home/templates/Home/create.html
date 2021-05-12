@@ -1,0 +1,18 @@
+{% extends 'Home/base.html' %}
+{% block title %}Create Blog{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-sm-8 mt-3 mx-auto">
+        <h3>Create Blog !!!</h3>
+        <form action="/create" method="post">
+            <div class="form-group">
+                <input type="text" name="title" placeholder="Title" class="form-control">
+            </div>
+            <div class="form-group">
+                <textarea name="body" class="form-control" id="" placeholder="Body ...." cols="30" rows="10"></textarea>
+            </div>
+            <button type="submit" class="btn btn-outline-info">ADD</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

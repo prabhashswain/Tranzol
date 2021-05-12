@@ -1,0 +1,15 @@
+{% extends 'Home/base.html' %}
+{% block title %}{{blog.title}}{% endblock %}
+{% block content %}
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-sm-8">
+            <h5 class="text-danger">{{blog.title}}</h5>
+            <p>{{blog.body}}</p>
+        </div>
+        <div class="col-sm-4">
+        <p class="text-success">By  : {{blog.writer}}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

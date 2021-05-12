@@ -1,0 +1,10 @@
+{% extends 'Home/base.html' %}
+{% block title %}Tranzol Blog{% endblock %}
+{% block content %}
+<div class="container mt-3">
+    {% for blog in blogs %}
+    <a href="{{url_for('home.blog_view',slug=blog.slug)}}"><h5>{{blog.title}}</h5></a>
+    <p>By : {{blog.writer}}</p>
+    {% endfor %}
+</div>
+{% endblock %}

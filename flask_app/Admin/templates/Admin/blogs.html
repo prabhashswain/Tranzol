@@ -1,0 +1,27 @@
+{% extends 'Admin/index.html' %}
+{% block body %}
+<table class="table text-center">
+    <thead >
+        <th>ID</th>
+        <th>TITLE</th>
+        <th>SLUG</th>
+        <th>BODY</th>
+        <th>AUTHOR</th>
+        <th>CREATED AT</th>
+        <th>ACTION</th>
+    </thead>
+    <tbody>
+        {% for blog in blogs %}
+        <tr>
+            <td>{{blog.id}}</td>
+            <td>{{blog.title}}</td>
+            <td>{{blog.slug}}</td>
+            <td>{{blog.body}}</td>
+            <td>{{blog.writer}}</td>
+            <td>{{blog.created_at}}</td>
+            <td><a href="{{url_for('admin.admin_blog_delete_view',id=blog.id)}}" class="btn btn-danger">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

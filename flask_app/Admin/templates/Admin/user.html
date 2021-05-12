@@ -1,0 +1,25 @@
+{% extends 'Admin/index.html' %}
+{% block body %}
+<table class="table text-center">
+    <thead >
+        <th>ID</th>
+        <th>USERNAME</th>
+        <th>EMAIL</th>
+        <th>AUTHOR</th>
+        <th>ADMIN</th>
+        <th>ACTION</th>
+    </thead>
+    <tbody>
+        {% for user in users %}
+        <tr>
+            <td>{{user.id}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.author}}</td>
+            <th>{{user.admin}}</th>
+            <td><a href="{{url_for('admin.admin_user_delete_view',id=user.id)}}" class="btn btn-outline-danger">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
